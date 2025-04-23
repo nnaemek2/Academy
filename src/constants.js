@@ -1,8 +1,8 @@
 //BRAND
 export const name = 'Academy';
 export const company = 'Academy';
-export const websiteURL = 'https://academy.pnacorp.co.uk/';
-export const serverURL = 'http://localhost:5000';
+export const websiteURL = 'https://academy.pnacorp.co.uk';
+export const serverURL = 'https://academy-steel-one.vercel.app';
 export const logo = 'https://academy.pnacorp.co.uk/logo192.png';
 export const razorpayEnabled = false;
 export const paypalEnabled = false;
