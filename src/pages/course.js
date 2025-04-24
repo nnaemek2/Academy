@@ -52,18 +52,6 @@ const Course = () => {
         const postURL = serverURL + '/api/aiexam';
         const response = await axios.post(postURL, { courseId, mainTopic, subtopicsString, lang });
         if (response.data.success) {
-            const element = document.documentElement; // or you can use a specific container if you want
-            if (element.requestFullscreen) {
-                element.requestFullscreen();
-            } else if (element.mozRequestFullScreen) { // Firefox
-                element.mozRequestFullScreen();
-            } else if (element.webkitRequestFullscreen) { // Chrome, Safari and Opera
-                element.webkitRequestFullscreen();
-            } else if (element.msRequestFullscreen) { // IE/Edge
-                element.msRequestFullscreen();
-            } else {
-                console.error('Full-screen mode is not supported by this browser.');
-            }
             let questions = JSON.parse(response.data.message);
             navigate('/exam', { state: { topic: mainTopic, courseId: courseId, questions: questions } });
             toast.update(id, { render: "Starting Quiz", type: "success", isLoading: false, autoClose: 3000, hideProgressBar: false, closeOnClick: true });
